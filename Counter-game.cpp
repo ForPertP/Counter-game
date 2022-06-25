@@ -12,11 +12,23 @@ string rtrim(const string &);
  * The function accepts LONG_INTEGER n as parameter.
  */
 
+// from https://www.hackerrank.com/challenges/counter-game/forum by AbhishekVermaIIT
 string counterGame(long n)
 {
     std::string result{"Richard"};
     long count = 0 ;
     n = n - 1;
+    
+    while (n)
+    {
+        n &= (n - 1);
+        count++;
+    }
+    
+    if (count & 1)
+    {
+        result = "Louise";
+    }
     
     return result;
 }
