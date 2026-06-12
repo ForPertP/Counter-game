@@ -12,7 +12,12 @@ string rtrim(const string &);
  * The function accepts LONG_INTEGER n as parameter.
  */
 
-// from https://www.hackerrank.com/challenges/counter-game/forum by AbhishekVermaIIT
+string counterGame(long n) {
+    //int turns = std::popcount(static_cast<unsigned long long>(n - 1));
+    int turns = __builtin_popcountll(n - 1) & 1;
+    return (turns & 1) ? "Louise" : "Richard";
+}
+
 string counterGame(long n)
 {
     std::string result{"Richard"};
